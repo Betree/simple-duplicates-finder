@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<div class="inputs-container">
+  <div class="inputs-col">
+    <label for="first-list">List 1</label>
+    <textarea id="first-list" [(ngModel)]="firstListStr" (input)="hasChanges = true"></textarea>
+  </div>
+  <div class="inputs-col">
+    <label for="second-list">List 2</label>
+    <textarea id="second-list" [(ngModel)]="secondListStr" (input)="hasChanges = true"></textarea>
+  </div>
+</div>
+<button id="btn-check" [disabled]="!hasChanges" (click)="refresh_uniques()">Verify</button>
+<div class="inputs-container" id="results">
+  <div class="inputs-col">
+    <label for="first-list-result">Only in list 1</label>
+    <textarea id="first-list-result" [disabled]="is_result_disabled()" readonly>{{uniqueFirstList}}</textarea>
+  </div>
+  <div class="inputs-col">
+    <label for="second-list-result">Only in list 2</label>
+    <textarea id="second-list-result" [disabled]="is_result_disabled()" readonly>{{uniqueSecondList}}</textarea>
+  </div>
+</div>

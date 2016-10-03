@@ -1,0 +1,33 @@
+.inputs-container {
+  width: 100%;
+  text-align: center;
+}
+
+.inputs-container > .inputs-col {
+  width: 45%;
+  display:inline-block;
+  text-align: left;
+}
+
+.inputs-container > .inputs-col > textarea {
+  display: block;
+  width: 95%;
+  resize: vertical;
+  min-height: 30vh;
+}
+
+#btn-check {
+  min-width: 130px;
+  margin-top: 10px;
+  height: 40px;
+}
+
+#results {
+  border-top: 1px solid lightgrey;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+#results.inputs-container > .inputs-col > textarea {
+  min-height: 45vh;
+}
