@@ -17,9 +17,9 @@ export class AppComponent {
     let firstList: string[] = this.firstListStr.split('\n').map(s => s.toLocaleLowerCase().trim());
     let secondList: string[] = this.secondListStr.split('\n').map(s => s.toLocaleLowerCase().trim());
 
-    this.uniqueFirstList = firstList.filter(e => secondList.indexOf(e) == -1).join('\n');
-    this.uniqueSecondList = secondList.filter(e => firstList.indexOf(e) == -1).join('\n');
-    this.common = firstList.filter(e => secondList.indexOf(e) != -1).join('\n');
+    this.uniqueFirstList = firstList.filter(e => e.length > 0 && secondList.indexOf(e) == -1).join('\n');
+    this.uniqueSecondList = secondList.filter(e => e.length > 0 && firstList.indexOf(e) == -1).join('\n');
+    this.common = firstList.filter(e => e.length > 0 && secondList.indexOf(e) != -1).join('\n');
 
     this.hasChanges = false;
   }
