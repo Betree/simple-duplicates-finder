@@ -8,16 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   firstListStr: string = '';
   secondListStr: string = '';
+  common: string = '';
   uniqueFirstList: string = '';
   uniqueSecondList: string = '';
   hasChanges: boolean = false;
 
   refresh_uniques(): void {
-    let firstList: string[] = this.firstListStr.split('\n').map(s => s.toLocaleLowerCase());
-    let secondList: string[] = this.secondListStr.split('\n').map(s => s.toLocaleLowerCase());
+    let firstList: string[] = this.firstListStr.split('\n').map(s => s.toLocaleLowerCase().trim());
+    let secondList: string[] = this.secondListStr.split('\n').map(s => s.toLocaleLowerCase().trim());
 
     this.uniqueFirstList = firstList.filter(e => secondList.indexOf(e) == -1).join('\n');
     this.uniqueSecondList = secondList.filter(e => firstList.indexOf(e) == -1).join('\n');
+    this.common = firstList.filter(e => secondList.indexOf(e) != -1).join('\n');
 
     this.hasChanges = false;
   }

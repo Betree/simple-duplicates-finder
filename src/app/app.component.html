@@ -9,6 +9,10 @@
   </div>
 </div>
 <button id="btn-check" [disabled]="!hasChanges" (click)="refresh_uniques()">Verify</button>
+<div id="common-result-container" class="inputs-container">
+  <label for="common-result">In both lists</label>
+  <textarea id="common-result" [disabled]="is_result_disabled()" readonly>{{common}}</textarea>
+</div>
 <div class="inputs-container" id="results">
   <div class="inputs-col">
     <label for="first-list-result">Only in list 1</label>

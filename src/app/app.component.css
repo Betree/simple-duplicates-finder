@@ -13,13 +13,30 @@
   display: block;
   width: 95%;
   resize: vertical;
-  min-height: 30vh;
+  min-height: 20vh;
 }
 
 #btn-check {
   min-width: 130px;
   margin-top: 10px;
   height: 40px;
+}
+
+#common-result-container {
+  width: 100%;
+  padding-top: 1rem;
+  margin: 1rem 0rem;
+  border-top: 1px solid lightgrey;
+}
+
+#common-result-container > * {
+  display: block;
+  margin: 0 auto;
+}
+
+#common-result-container > textarea {
+  width: 250px;
+  min-height: 10vh;
 }
 
 #results {
@@ -29,5 +46,5 @@
 }
 
 #results.inputs-container > .inputs-col > textarea {
-  min-height: 45vh;
+  min-height: 40vh;
 }
